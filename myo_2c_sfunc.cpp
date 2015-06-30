@@ -115,9 +115,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     
     while (1) 
     {
-        // In each iteration of our main loop, we run the Myo event loop for a set number of milliseconds.
-        // In this case, we wish to update our display 20 times a second, so we run for 1000/20 milliseconds.
-        hUb.run(1);
+        // Process events one a time
+        hUb.runOnce(100);
 //        mYo->unlock(myo::Myo::unlockHold);
          
         // get the frame
